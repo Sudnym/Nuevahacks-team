@@ -1,12 +1,12 @@
 <style>
     .box {
         width: 98%;
-        border: 1px solid #aaa;
+        border: 1px solid #005050;
         border-radius: 25px;
         box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
         padding: 1em;
         margin: 0 0 1em 0;
-        background: #333333;
+        background: maroon;
         align-content: center;
         align-items: center;
         justify-content: center;
@@ -17,18 +17,16 @@
         border-radius: 25px;
         width: 100%;
         border: none;
-        background: #666666;
+        background: #006060;
         align-self: center;
         align-content: center;
         display: inline-block;
         justify-content: center;
         text-align: center;
         margin: auto;
-        color: floralwhite;
+        color: maroon;
     }
-    body {
-        background-color: coral;
-    }
+
 </style>
 <body>
 <div class="box">
