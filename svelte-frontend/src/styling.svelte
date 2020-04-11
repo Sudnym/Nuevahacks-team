@@ -33,7 +33,7 @@
 <body>
 <div class="box">
     <div class="box-inside">
-        <slot></slot>
+        <slot/>
     </div>
 </div>
 </body>
