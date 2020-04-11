@@ -1,9 +1,7 @@
 <!-- This is the main page where users view algorithmically chosen posts -->
-
+<title>We're all done for the day?</title>
 <script>
     import Box from './styling.svelte'
 </script>
 
-<Box>
-    <h1><strong>We're all done for today?</strong></h1>
-</Box>
+<Box/> <!-- Display's the site title and a color scheme i've been playing with -->

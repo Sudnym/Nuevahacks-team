@@ -6,7 +6,7 @@
         box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
         padding: 1em;
         margin: 0 0 1em 0;
-        background: maroon;
+        background: dimgray;
         align-content: center;
         align-items: center;
         justify-content: center;
@@ -17,21 +17,30 @@
         border-radius: 25px;
         width: 100%;
         border: none;
-        background: #006060;
+        background: #1d3040;
         align-self: center;
         align-content: center;
         display: inline-block;
         justify-content: center;
         text-align: center;
         margin: auto;
-        color: maroon;
+        color: dimgrey;
     }
-
+    :global(body){
+        background: #1d3040;
+    }
+    .headertext{
+        font-family: Calibri;
+    }
 </style>
 <body>
-<div class="box">
-    <div class="box-inside">
-        <slot/>
+    <div class="box">
+        <div class="box-inside">
+            <h1 class="headertext">
+                <strong>
+                    WE'RE ALL DONE FOR THE DAY?
+                </strong>
+            </h1>
+        </div>
     </div>
-</div>
 </body>
