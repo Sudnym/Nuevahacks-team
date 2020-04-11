@@ -1,0 +1,1 @@
+<!-- This is the page where users upload their own posts and those posts are then sent to the server for handling -->

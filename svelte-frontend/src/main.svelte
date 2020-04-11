@@ -1,0 +1,1 @@
+<!-- This is the main page where users view algorithmically chosen posts -->
