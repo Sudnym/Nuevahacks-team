@@ -69,6 +69,7 @@
         width: 100%;
         border: 1px solid #005050;
         box-shadow: 0px 0px 8px rgba(0,0,0,1);
+        color: #333333;
         background: #EEEEEE;
         align-content: center;
         align-items: center;
@@ -109,17 +110,5 @@
         </div>
         <nav id="top-nav">
         </nav>
-    </div>
-
-    <div class="box-white">
-        <div class="box-inside">
-            <h1 class="headertext">
-                <strong>
-                    WE'RE ALL DONE FOR THE DAY?
-                </strong>
-            </h1>
-        </div>
-    </div>
-    <div class = "box">
     </div>
 </body>

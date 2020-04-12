@@ -7,18 +7,11 @@ export class restRequests {
 
 
     async postRequest(url) {
-        axios.post(url)
-            .then(
-                response => {
-                    return response;
-                })
-            .catch(
-                error => {
-                    return this.error(error);
-                })
+        let returner = axios.post(url).catch(error => {return this.error(error)});
+        return returner
     }
 
     error(error) {
-        return "Sorry, we were unable to retrieve data from the server." + error;
+        console.log("Sorry, we were unable to retrieve data from the server." + error);
     }
 }

@@ -10,6 +10,5 @@
     let requester = new restRequests();
     console.log(requester.getRequest('https://dog.ceo/api/breeds/list/all'))
 </script>
-
 <Box/> <!-- Display's the site title and a color scheme i've been playing with -->
 <p style="color: beige"></p>
