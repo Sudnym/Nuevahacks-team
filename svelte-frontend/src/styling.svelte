@@ -1,7 +1,9 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
-
+<script>
+    let src = "./favicon.png"
+</script>
 <style>
     #top-nav-bar {
         background-color: rgb(252, 252, 252);
@@ -143,5 +145,5 @@
 
     <div class = "box1">
     </div>
-    <img src = {test.png} alt = "Test">
+    <img {src} >
 </body>
