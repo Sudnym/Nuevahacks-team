@@ -2,7 +2,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <script>
-    let src = "./favicon.png"
+    let src = "./test.png"
 </script>
 <style>
     #top-nav-bar {
