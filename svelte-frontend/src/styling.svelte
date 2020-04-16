@@ -5,23 +5,31 @@
     import Post from "./post.svelte"
     import Search from "./search.svelte"
     import Contact from "./contact.svelte"
+    import Home from "./home.svelte"
     let src = "./test.png";
     function homeHandler(){
+        document.getElementById("post").style.display = "none";
+        document.getElementById("search").style.display = "none";
+        document.getElementById("contact").style.display = "none";
+        document.getElementById("home").style.display = "block";
     }
     function postHandler(){
         document.getElementById("post").style.display = "block";
         document.getElementById("search").style.display = "none";
         document.getElementById("contact").style.display = "none";
+        document.getElementById("home").style.display = "none";
     }
     function searchHandler() {
         document.getElementById("post").style.display = "none";
         document.getElementById("search").style.display = "block";
         document.getElementById("contact").style.display = "none";
+        document.getElementById("home").style.display = "none";
     }
     function contactHandler() {
         document.getElementById("post").style.display = "none";
         document.getElementById("search").style.display = "none";
         document.getElementById("contact").style.display = "block";
+        document.getElementById("home").style.display = "none";
     }
 </script>
 <style>
@@ -170,5 +178,8 @@
     </div>
     <div id="contact" style="display: none">
         <Contact/>
+    </div>
+    <div id="home" style="display: none">
+        <Home/>
     </div>
 </body>
