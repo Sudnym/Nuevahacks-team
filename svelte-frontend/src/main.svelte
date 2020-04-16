@@ -5,9 +5,11 @@
     </title>
 </head>
 <script>
-    import Box from './styling.svelte';
+    /* imports */
+    import Styling from './styling.svelte';
     import { restRequests } from './restrequests.ts';
+
     let requester = new restRequests();
-    console.log(requester.getRequest('https://dog.ceo/api/breeds/list/all'))
+
 </script>
-<Box/> <!-- Display's the site title and a color scheme i've been playing with -->
+<Styling/>

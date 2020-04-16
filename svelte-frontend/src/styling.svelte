@@ -2,18 +2,26 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <script>
-    let src = "./test.png"
-    function homehandler(){
-        
+    import Post from "./post.svelte"
+    import Search from "./search.svelte"
+    import Contact from "./contact.svelte"
+    let src = "./test.png";
+    function homeHandler(){
     }
-    function posthandler(){
-        
+    function postHandler(){
+        document.getElementById("post").style.display = "block";
+        document.getElementById("search").style.display = "none";
+        document.getElementById("contact").style.display = "none";
     }
-    function searchhandler() {
-
+    function searchHandler() {
+        document.getElementById("post").style.display = "none";
+        document.getElementById("search").style.display = "block";
+        document.getElementById("contact").style.display = "none";
     }
-    function contacthandler() {
-
+    function contactHandler() {
+        document.getElementById("post").style.display = "none";
+        document.getElementById("search").style.display = "none";
+        document.getElementById("contact").style.display = "block";
     }
 </script>
 <style>
@@ -30,21 +38,19 @@
     #top-nav {
         list-style-type: none;
         margin: 0;
-        padding: 0;
         float: left;
         color: #ccb63a;
-        padding: 9px;
-        padding-left: 75px;
+        padding: 9px 9px 9px 75px;
         font-family: "Trebuchet MS", Helvetica, sans-serif;
         text-decoration: none;
-        text-shadow: 0px 0px 5px black;
+        text-shadow: 0 0 5px black;
         font-size: 1.25vw;
 
     }
     #top-links {
         position: absolute;
         padding: 3.05rem;
-        text-shadow: 0px 0px 19px #fff1a4;
+        text-shadow: 0 0 19px #fff1a4;
         margin-left: 50%;
         z-index: 20;
         font-family: 'Montserrat', sans-serif;
@@ -56,14 +62,14 @@
         position: relative;
         color: #ccb63a;
         text-decoration: none !important;
-        text-shadow: 0px 3px 0px #fff1a4;
+        text-shadow: 0 3px 0 #fff1a4;
         margin-left: 4rem;
         font-size: 30px;
 
     }
 
     #top-nav-link:hover {color: #fff1a4;
-        text-shadow: 0px 3px 0px #ccb63a;
+        text-shadow: 0 3px 0 #ccb63a;
 
     }
     .box1 {
@@ -71,7 +77,7 @@
         margin-left: -1.25rem;
         margin-top: 5rem;
         border: 1.5rem solid #fff1a4;
-        box-shadow: 0px 0px 8px rgba(0,0,0,1);
+        box-shadow: 0 0 8px rgba(0,0,0,1);
         background: #fff1a4;
         align-content: center;
         align-items: center;
@@ -92,7 +98,7 @@
         padding-left: 600px;
         text-decoration: none;
         font-family: "Trebuchet MS", Helvetica, sans-serif;
-        box-shadow: 0 0 0px black;
+        box-shadow: 0 0 0 black;
 
     }
     #logo {
@@ -105,7 +111,7 @@
     }
     .box-white {
         width: 100%;
-        box-shadow: 0px 0px 8px rgba(0,0,0,1);
+        box-shadow: 0 0 8px rgba(0,0,0,1);
         background: #EEEEEE;
         align-content: center;
         align-items: center;
@@ -123,14 +129,13 @@
         display: inline-block;
         justify-content: center;
         text-align: center;
-        margin: auto;
         color: #fff1a4;
     }
     :global(body){
         background: #141414;
     }
     .headertext{
-        font-family: Calibri;
+        font-family: Calibri, serif;
     }
     .heading-header-text{
         position: absolute;
@@ -145,17 +150,25 @@
         <div id = "heading-logo" >
             <h1 class = "heading-header-text"> Athena </h1>
             <img id = "logo" src = "https://www.pngitem.com/pimgs/m/260-2606767_greek-pillar-capital-icon-pillar-greece-png-icon.png" alt="Logo">
-            <div align="right" style="margin: 50px; width: 50%; float: right ">
-                <a id = "top-nav-link" style = "color: black;" on:click={homehandler}> <b> Home</b> </a>
-                <a id = "top-nav-link" on:click={posthandler}> <b> Post </b> </a>
-                <a id = "top-nav-link" on:click={searchhandler}> <b> Find Your Post </b> </a>
-                <a id = "top-nav-link" on:click={contacthandler}> <b> Contact </b> </a>
+            <div style="margin: 50px; width: 50%; float: right ">
+                <a id = "top-nav-link" style = "color: black;" on:click={homeHandler}> <b> Home</b> </a>
+                <a id = "top-nav-link" on:click={postHandler}> <b> Post </b> </a>
+                <a id = "top-nav-link" on:click={searchHandler}> <b> Find Your Post </b> </a>
+                <a id = "top-nav-link" on:click={contactHandler}> <b> Contact </b> </a>
             </div>
         </div>
         <nav id="top-nav">
         </nav>
     </div>
-
     <div class = "box1">
+    </div>
+    <div id="post" style="display: none">
+        <Post/>
+    </div>
+    <div id="search" style="display: none">
+        <Search/>
+    </div>
+    <div id="contact" style="display: none">
+        <Contact/>
     </div>
 </body>
