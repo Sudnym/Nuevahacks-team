@@ -3,6 +3,18 @@
 </head>
 <script>
     let src = "./test.png"
+    function homehandler(){
+        
+    }
+    function posthandler(){
+        
+    }
+    function searchhandler() {
+
+    }
+    function contacthandler() {
+
+    }
 </script>
 <style>
     #top-nav-bar {
@@ -13,7 +25,7 @@
         margin-top: -1.2rem;
         position: fixed;
         z-index: 10;
-            
+
     }
     #top-nav {
         list-style-type: none;
@@ -27,7 +39,7 @@
         text-decoration: none;
         text-shadow: 0px 0px 5px black;
         font-size: 1.25vw;
-        
+
     }
     #top-links {
         position: absolute;
@@ -37,7 +49,7 @@
         z-index: 20;
         font-family: 'Montserrat', sans-serif;
         font-size: 2rem;
-                        
+
     }
 
     #top-nav-link   {
@@ -46,12 +58,13 @@
         text-decoration: none !important;
         text-shadow: 0px 3px 0px #fff1a4;
         margin-left: 4rem;
-    
+        font-size: 30px;
+
     }
-        
+
     #top-nav-link:hover {color: #fff1a4;
         text-shadow: 0px 3px 0px #ccb63a;
-    
+
     }
     .box1 {
         width: 100%;
@@ -65,12 +78,12 @@
         justify-content: center;
         place-content: center;
     }
-    #heading { 
+    #heading {
         background-color: #ccb63a;
         width: 100%;
         margin-left: -10px;
-        margin-top: 35px;                    
-        border-style: solid;                    
+        margin-top: 35px;
+        border-style: solid;
         border-right-width: 20px;
         border-color: #ccb63a;
         position: fixed;
@@ -80,7 +93,7 @@
         text-decoration: none;
         font-family: "Trebuchet MS", Helvetica, sans-serif;
         box-shadow: 0 0 0px black;
-        
+
     }
     #logo {
         margin-top: 2rem;
@@ -88,7 +101,7 @@
         width: 4rem;
         height: 4rem;
         z-index: 15;
-    
+
     }
     .box-white {
         width: 100%;
@@ -130,14 +143,14 @@
 <body>
     <div id="top-nav-bar">
         <div id = "heading-logo" >
-            <nav id = "top-links">
-                <a id = "top-nav-link" href = "index.html" style = "color: black;"> <b> Home</b> </a>
-                <a id = "top-nav-link" href = "about-us.html"> <b> Post </b> </a>
-                <a id = "top-nav-link" href = "get-involved.html"> <b> Find Your Post </b> </a>
-                <a id = "top-nav-link" href = "contact.html"> <b> Contact </b> </a>
-            </nav>
             <h1 class = "heading-header-text"> Athena </h1>
             <img id = "logo" src = "https://www.pngitem.com/pimgs/m/260-2606767_greek-pillar-capital-icon-pillar-greece-png-icon.png" alt="Logo">
+            <div align="right" style="margin: 50px; width: 50%; float: right ">
+                <a id = "top-nav-link" style = "color: black;" on:click={homehandler}> <b> Home</b> </a>
+                <a id = "top-nav-link" on:click={posthandler}> <b> Post </b> </a>
+                <a id = "top-nav-link" on:click={searchhandler}> <b> Find Your Post </b> </a>
+                <a id = "top-nav-link" on:click={contacthandler}> <b> Contact </b> </a>
+            </div>
         </div>
         <nav id="top-nav">
         </nav>
@@ -145,5 +158,4 @@
 
     <div class = "box1">
     </div>
-    <img {src} >
 </body>
