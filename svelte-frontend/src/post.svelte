@@ -94,8 +94,5 @@
                 </div>
             </div>
         </div>
-        <div id = "left-bottom-div">
-            <h3 id = "top-text"> Feed </h3>
-        </div>
     </div>
 </div>

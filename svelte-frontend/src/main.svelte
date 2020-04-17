@@ -7,9 +7,5 @@
 <script>
     /* imports */
     import Styling from './styling.svelte';
-    import { restRequests } from './restrequests.ts';
-
-    let requester = new restRequests();
-
 </script>
 <Styling/>
