@@ -1,11 +1,23 @@
-<script context="module">
+<script>
+    function sendmail() {
 
-</script>
-<style>
-    .contact{
-        color: #EEEEEE;
     }
-</style>
-<div class="contact">
-<h1 style="color: white">Welcome to Athena!</h1>
+</script>
+<div>
+    <label>
+        <input placeholder="First Name">
+    </label>
+</div>
+<div>
+    <label>
+        <input placeholder="Email">
+    </label>
+</div>
+<div>
+    <label>
+        <input placeholder="Message">
+    </label>
+</div>
+<div>
+    <button on:click={sendmail}><b>SEND</b></button>
 </div>

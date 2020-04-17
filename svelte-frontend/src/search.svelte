@@ -1,2 +1,11 @@
 <!-- This is where users input searches for posts to retrieve their own posts -->
 <!-- It is important that posts cannot be found without the private key given only to the person who makes the post -->
+<script>
+    function search() {
+
+    }
+</script>
+<label>
+    <input placeholder="Search">
+    <button on:click={search}><b>SEARCH</b></button>
+</label>
