@@ -1,0 +1,15 @@
+{
+  "name": "grapevine-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "WalkerKnapp",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^13.13.0"
+  }
+}
