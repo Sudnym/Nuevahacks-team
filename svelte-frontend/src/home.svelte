@@ -1,6 +1,6 @@
 <script>
     let posts = [
-        {title: "this post", text: "this text"}
+        {title: "I MADE A THING", text: "This is a post, hello, suck it."}
     ]
     function getposts() {
 

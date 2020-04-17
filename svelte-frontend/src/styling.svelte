@@ -179,7 +179,7 @@
     <div id="contact" style="display: none">
         <Contact/>
     </div>
-    <div id="home" style="display: none">
+    <div id="home" style="display: block">
         <Home/>
     </div>
 </body>
