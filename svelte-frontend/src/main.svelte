@@ -1,9 +1,9 @@
 <!-- This is the main page where users view algorithmically chosen posts -->
-<head>
+<svelte:head>
     <title>
-        We're all done for the day?
+        Athena
     </title>
-</head>
+</svelte:head>
 <script>
     /* imports */
     import Styling from './styling.svelte';
