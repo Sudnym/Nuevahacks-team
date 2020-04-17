@@ -1,7 +1,7 @@
 <script>
     let posts = [
         {title: "I MADE A THING", text: "This is a post, hello, suck it."}
-    ]
+    ];
     function getposts() {
 
     }

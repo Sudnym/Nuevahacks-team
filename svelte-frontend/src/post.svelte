@@ -13,7 +13,7 @@
 <br>
 <div>
     <label id="post_input">
-        <input class="postbox" placeholder="Post">
+        <textarea class="postbox" placeholder="Post"></textarea>
     </label>
 </div>
 <br>

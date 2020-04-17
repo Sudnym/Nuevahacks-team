@@ -15,7 +15,7 @@
 </div>
 <div>
     <label>
-        <input placeholder="Message">
+        <textarea placeholder="Message"></textarea>
     </label>
 </div>
 <div>
