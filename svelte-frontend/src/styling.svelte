@@ -6,7 +6,7 @@
     import Search from "./search.svelte"
     import Contact from "./contact.svelte"
     import Home from "./home.svelte"
-    let src = "./test.png";
+    let src = "./test.png"
     function homeHandler(){
         document.getElementById("post").style.display = "none";
         document.getElementById("search").style.display = "none";
