@@ -34,7 +34,7 @@
 </script>
 <style>
     #top-nav-bar {
-        background-color: rgb(252, 252, 252);
+        background-color: #350035;
         height: 8rem;
         width: 100%;
         margin-left: -1.2rem;
@@ -51,7 +51,6 @@
         padding: 9px 9px 9px 75px;
         font-family: "Trebuchet MS", Helvetica, sans-serif;
         text-decoration: none;
-        text-shadow: 0 0 5px black;
         font-size: 1.25vw;
 
     }
