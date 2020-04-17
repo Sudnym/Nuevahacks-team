@@ -157,7 +157,7 @@
     <div id="top-nav-bar">
         <div id = "heading-logo" >
             <h1 class = "heading-header-text"> Grapevine </h1>
-            <img id = "logo" src = "https://www.pngitem.com/pimgs/m/260-2606767_greek-pillar-capital-icon-pillar-greece-png-icon.png" alt="Logo">
+            <img id = "logo" src = https://cdn.discordapp.com/attachments/698564721334419507/699769787294810162/LogoMakr_5Lb4Lv.png alt="Logo">
             <div style="margin: 50px; width: 50%; float: right ">
                 <a id = "top-nav-link" style = "color: black;" on:click={homeHandler}> <b> Home</b> </a>
                 <a id = "top-nav-link" on:click={postHandler}> <b> Post </b> </a>

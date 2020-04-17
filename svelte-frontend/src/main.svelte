@@ -1,7 +1,7 @@
 <!-- This is the main page where users view algorithmically chosen posts -->
 <svelte:head>
     <title>
-        Grapevine
+        The Grape Vine
     </title>
 </svelte:head>
 <script>
