@@ -1,6 +1,6 @@
-<head>
+<svelte:head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-</head>
+</svelte:head>
 <script>
     import Post from "./post.svelte"
     import Search from "./search.svelte"
