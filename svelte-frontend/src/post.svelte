@@ -23,11 +23,11 @@
     }
     #left-top-div
     {
-        background-color: rgb(42, 41, 48);
+        background-color: rgb(33, 32, 37);
         width: 66%;
         float: left;
         height: 350px;
-        margin-top: 18px;
+        margin-top: 15px;
     }
     #post-section
     {

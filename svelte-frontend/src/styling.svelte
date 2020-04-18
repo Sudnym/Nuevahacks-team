@@ -16,10 +16,10 @@
 </script>
 <style>
     #top-nav-bar {
-        background-color: #350035;
+        background-color: white;
         height: 8rem;
         width: 100%;
-        margin-left: -1.2rem;
+        margin-left: -1rem;
         margin-top: -1.2rem;
         position: fixed;
         z-index: 10;
@@ -66,9 +66,9 @@
         width: 100%;
         margin-left: -1.25rem;
         margin-top: 5rem;
-        border: 1.5rem solid #fff1a4;
+        border: 1.5rem solid #ccb63a;
         box-shadow: 0 0 8px rgba(0,0,0,1);
-        background: #fff1a4;
+        background: #ccb63a;
         align-content: center;
         align-items: center;
         justify-content: center;
@@ -142,7 +142,7 @@
             <img id = "logo" src = https://cdn.discordapp.com/attachments/698564721334419507/699769787294810162/LogoMakr_5Lb4Lv.png alt="Logo">
             <div style="margin: 40px; width: 50%; float: right ">
                 <a id = "top-nav-link" on:click={postHandler}> <b> Post </b> </a>
-                <a id = "top-nav-link" style = "color: lightgrey;" on:click={homeHandler}> <b> Home</b> </a>
+                <a id = "top-nav-link" on:click={homeHandler}> <b> Home</b> </a>
             </div>
         </div>
         <nav id="top-nav">
