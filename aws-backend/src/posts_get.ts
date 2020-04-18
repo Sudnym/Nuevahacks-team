@@ -45,6 +45,7 @@ export const handler = (event: any, context: any, callback: any) => {
             body: err ? err.message : JSON.stringify(res),
             headers: {
                 'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*"
             }
         });
 
