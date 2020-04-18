@@ -1,14 +1,12 @@
 <!-- This is the page where users upload their own posts and those posts are then sent to the server for handling -->
 
 <script context="module">
-
 </script>
 <style>
     .post
     {
         color: #EEEEEE;
     }
-
     #right-div
     {
         background-color: rgb(58, 56, 66);
@@ -17,7 +15,6 @@
         height: 1000px;
         margin-top: 15px;
     }
-
     #left-top-div
     {
         background-color: rgb(42, 41, 48);
@@ -26,7 +23,6 @@
         height: 350px;
         margin-top: 18px;
     }
-
     #post-section
     {
         background-color: rgb(58, 56, 66);
@@ -34,13 +30,18 @@
         height: 150px;
         margin-left: 5%;
     }
-
     #ppf
     {
         position: absolute;
         margin: 37.5px;
     }
 
+    #post-sumbit-button
+    {
+        margin-top: 37.5px;
+        margin-left: 85%;
+        border: none;
+    }
     #post-input-box
     {
         width: 40%;
@@ -51,7 +52,6 @@
         background-color: rgb(42, 41, 48);
         position: absolute;
     }
-
     #post-input
     {
         width: 100%;
@@ -61,7 +61,6 @@
         border-radius: 200px;
         color: #EEEEEE;
     }
-
     #left-bottom-div
     {
         background-color: rgb(33, 32, 37);
@@ -70,7 +69,6 @@
         height: 650px;
         margin-top: 18px;
     }
-
     #top-text
     {
         text-align: center;
@@ -78,6 +76,9 @@
         text-shadow: 0, 5px, 0, rgb(22, 22, 20);
     }
 
+    textarea:focus, input:focus{
+        outline: none;
+    }
 </style>
 <div class="post">
     <div>
@@ -92,6 +93,7 @@
                 <div id = "post-input-box">
                     <input id = "post-input" type = "text">
                 </div>
+                <input id = "post-sumbit-button" type="image" src = "https://www.dqinstitute.org/wp-content/uploads/2018/02/560px-ArrowRight-blue.svg_.png" alt = "submit" width = 75px height = 75px>
             </div>
         </div>
     </div>
