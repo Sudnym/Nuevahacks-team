@@ -139,7 +139,7 @@
     <div id="top-nav-bar">
         <div id = "heading-logo" >
             <h1 class = "heading-header-text"> Grapevine </h1>
-            <img id = "logo" src = https://cdn.discordapp.com/attachments/698564721334419507/699769787294810162/LogoMakr_5Lb4Lv.png alt="Logo">
+            <img id = "logo" src = logo2.png alt="Logo">
             <div style="margin: 40px; width: 50%; float: right ">
                 <a id = "top-nav-link" on:click={postHandler}> <b> Post </b> </a>
                 <a id = "top-nav-link" on:click={homeHandler}> <b> Home</b> </a>
