@@ -6,17 +6,16 @@ const FlakeId = require('flake-idgen');
 
 const flakeIdGen = new FlakeId();
 
-const db_connection = mysql.createConnection({
-    host: rds_endpoint,
-    user: rds_username,
-    password: rds_password,
-    database: "Grapevine"
-});
-
 export const handler = (event: any, context: any, callback: any) => {
     console.log(event);
     console.log(context);
 
+    const db_connection = mysql.createConnection({
+        host: rds_endpoint,
+        user: rds_username,
+        password: rds_password,
+        database: "Grapevine"
+    });
     db_connection.connect((err: any) => {
         if (err) throw err;
         console.log('Connected!');

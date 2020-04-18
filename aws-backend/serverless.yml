@@ -23,3 +23,10 @@ functions:
           path: posts
           method: post
           cors: true
+  grapevine_post_get:
+    handler: src/post_get.handler
+    events:
+      - http:
+          path: post
+          method: get
+          cors: true
