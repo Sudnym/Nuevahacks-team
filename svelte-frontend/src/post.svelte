@@ -102,7 +102,6 @@
         <div id = "left-top-div">
             <h3 id = "top-text"> Post </h3>
             <div id = "post-section">
-                
                 <img id = "ppf" src = "https://cdn.clipart.email/8f4e4a0f0cbf0dee5af55ba7cfedeca3_white-circle-png-free-download_1890-1890.png" width = 75px height = 75px>
                 <div id = "post-input-box">
                     <input id = "post-input" type = "text">
