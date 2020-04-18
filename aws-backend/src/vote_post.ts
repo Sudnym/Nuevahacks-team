@@ -44,9 +44,10 @@ export const handler = (event: any, context: any, callback: any) => {
                         "Access-Control-Allow-Origin": "*"
                     }
                 });
+
+                db_connection.query('UPDATE posts SET upvotes = (SELECT COUNT(*) FROM votes WHERE `post_id` = ?) WHERE `post_id` = ?',
+                    [post_id, post_id], (err:any, res:any) => { db_connection.end(); });
         });
 
-        db_connection.query('UPDATE posts SET upvotes = (SELECT COUNT(*) FROM votes WHERE `post_id` = ?) WHERE `post_id` = ?',
-            [post_id, post_id], (err:any, res:any) => {});
     });
 };
