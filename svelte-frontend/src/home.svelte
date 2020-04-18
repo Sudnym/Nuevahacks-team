@@ -181,8 +181,9 @@
 
     /* The container <div> - needed to position the dropdown content */
     .dropdown {
-        position: relative;
-        display: inline-block;
+        position: absolute;
+        display: block;
+        padding: 20px;
     }
 
     /* Dropdown Content (Hidden by Default) */
@@ -271,7 +272,7 @@
         width: 66%;
         float: left;
         height: fit-content;
-        margin-top: 18px;
+        margin-top: 15px;
         justify-content: center;
         justify-items: center;
         align-content: center;
