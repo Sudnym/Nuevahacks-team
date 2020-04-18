@@ -8,10 +8,16 @@
     let topic = [
         { topic: "Interesting"}
     ];
+    let sort = [
+        { sort: "Hot", link: sorthandler('hot')}
+    ];
     function getposts() {
 
     }
     function topichandler() {
+
+    }
+    function sorthandler(sort) {
 
     }
 </script>
@@ -164,6 +170,47 @@
     {
         color: #EEEEEE;
     }
+    /* Dropdown Button */
+    .dropbtn {
+        background-color: black;
+        color: gray;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: ghostwhite;}
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: black;}
     #right-div
     {
         background-color: rgb(58, 56, 66);
@@ -263,6 +310,14 @@
             {/each}
         </div>
         <div id = "left-bottom-div">
+            <div class="dropdown">
+                <button class="dropbtn">Sort by:</button>
+                <div class="dropdown-content">
+                    {#each sort as { sort, link }}
+                        <a on:click={link}>{sort}</a>
+                    {/each}
+                </div>
+            </div>
             <h3 id = "top-text"> Feed </h3>
             {#each posts as {title, text}}
             <div class="box-white">

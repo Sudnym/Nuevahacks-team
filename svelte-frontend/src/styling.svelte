@@ -7,14 +7,10 @@
     let src = "./test.png";
     function homeHandler(){
         document.getElementById("post").style.display = "none";
-        document.getElementById("search").style.display = "none";
-        document.getElementById("contact").style.display = "none";
         document.getElementById("home").style.display = "block";
     }
     function postHandler(){
         document.getElementById("post").style.display = "block";
-        document.getElementById("search").style.display = "none";
-        document.getElementById("contact").style.display = "none";
         document.getElementById("home").style.display = "none";
     }
 </script>
@@ -156,9 +152,6 @@
     </div>
     <div id="post" style="display: none">
         <Post/>
-    </div>
-    <div id="contact" style="display: none">
-        <Contact/>
     </div>
     <div id="home" style="display: block">
         <Home/>

@@ -3,7 +3,7 @@
 <script context="module">
     let topic = [
         { topic: "interesting"}
-    ]
+    ];
     function topichandler() {
 
     }
