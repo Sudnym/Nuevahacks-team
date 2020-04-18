@@ -7,6 +7,15 @@
     function topichandler() {
 
     }
+    function postHandler() {
+        let data =
+                {title: document.getElementById('post-input-title').value,
+                    content: document.getElementById('post-input').value};
+        fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+    }
 </script>
 <style>
     .post
@@ -26,15 +35,16 @@
         background-color: rgb(33, 32, 37);
         width: 66%;
         float: left;
-        height: 350px;
+        height: fit-content;
         margin-top: 15px;
     }
     #post-section
     {
         background-color: rgb(58, 56, 66);
-        width: 90%;
-        height: 150px;
+        width: inherit;
+        height: fit-content;
         margin-left: 5%;
+        padding: 30px;
     }
     #ppf
     {
@@ -61,11 +71,24 @@
     #post-input
     {
         width: 100%;
-        height: 100%;
+        height: fit-content;
         background-color: rgb(42, 41, 48);
         border: 0;
         border-radius: 200px;
         color: #EEEEEE;
+        padding: 50px;
+        resize: none;
+    }
+    #post-input-title
+    {
+        width: 100%;
+        height: fit-content;
+        background-color: rgb(42, 41, 48);
+        border: 0;
+        border-radius: 200px;
+        color: #EEEEEE;
+        padding: 50px;
+        resize: none;
     }
     #left-bottom-div
     {
@@ -102,12 +125,14 @@
         <div id = "left-top-div">
             <h3 id = "top-text"> Post </h3>
             <div id = "post-section">
-                <img id = "ppf" src = "https://cdn.clipart.email/8f4e4a0f0cbf0dee5af55ba7cfedeca3_white-circle-png-free-download_1890-1890.png" width = 75px height = 75px>
-                <div id = "post-input-box">
-                    <input id = "post-input" type = "text">
-                </div>
-                <input id = "post-sumbit-button" type="image" src = "https://www.dqinstitute.org/wp-content/uploads/2018/02/560px-ArrowRight-blue.svg_.png" alt = "submit" width = 75px height = 75px>
+                <h3 id = "top-text">Title:</h3>
+                    <input id="post-input-title">
             </div>
+                <div id="post-section">
+                    <h3 id="top-text" style="padding-top: 20px">Body:</h3>
+                    <textarea id = "post-input" type = "text"></textarea>
+                </div>
+                <input id = "post-sumbit-button" on:click={postHandler} type="image" src = "https://www.dqinstitute.org/wp-content/uploads/2018/02/560px-ArrowRight-blue.svg_.png" alt = "submit" width = 75px height = 75px>
         </div>
     </div>
 </div>
