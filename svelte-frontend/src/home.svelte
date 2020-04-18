@@ -40,7 +40,20 @@
         }
     }
     function upvote(name) {
-        this.src = 'filled.png'
+        if (this.src === 'emptybutton.png'){
+            this.src = 'filled.png';
+            let data = { vote: 1}
+            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/vote?id='+this.title.toString(), {
+                method: 'POST',
+                body: JSON.stringify(data)})
+        }
+        else{
+            this.src = 'emptybutton.png';
+            let data = {vote:0}
+            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/vote?id='+this.title.toString(), {
+                method: 'POST',
+                body: JSON.stringify(data)})
+        }
     }
 </script>
 <style>
@@ -350,12 +363,12 @@
                 </div>
             </div>
             <h3 id = "top-text"> Feed </h3>
-            {#each posts as {title, text}, i}
+            {#each posts as {title, content, id, upvotes}, i}
                 <div class="box-white">
                     <h1 id="top-text" >{title}</h1>
                     <div id="blackline"></div>
-                    <p style="margin-bottom: auto; padding-bottom: 20px">{text}</p>
-                    <img id='upvote' src="emptybutton.png" on:click={upvote}>
+                    <p style="margin-bottom: auto; padding-bottom: 20px">{content}</p>
+                    <img id='upvote' src="emptybutton.png" on:click={upvote} title="{id}">
                 </div>
             {/each}
         </div>
