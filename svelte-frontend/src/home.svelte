@@ -40,19 +40,21 @@
         }
     }
     function upvote(name) {
-        if (this.src === 'emptybutton.png'){
+        if (this.title == 'false'){
             this.src = 'filled.png';
             let data = { vote: 1}
-            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/vote?id='+this.title.toString(), {
+            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/vote?id='+this.alt.toString(), {
                 method: 'POST',
                 body: JSON.stringify(data)})
+            this.title = 'true'
         }
         else{
             this.src = 'emptybutton.png';
             let data = {vote:0}
-            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/vote?id='+this.title.toString(), {
+            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/vote?id='+this.alt.toString(), {
                 method: 'POST',
                 body: JSON.stringify(data)})
+            this.title = 'false'
         }
     }
 </script>
@@ -367,8 +369,9 @@
                 <div class="box-white">
                     <h1 id="top-text" >{title}</h1>
                     <div id="blackline"></div>
+                    <p style="display: none">{upvotes}</p>
                     <p style="margin-bottom: auto; padding-bottom: 20px">{content}</p>
-                    <img id='upvote' src="emptybutton.png" on:click={upvote} title="{id}">
+                    <img id='upvote' src="emptybutton.png" on:click={upvote} title="false" alt="{id}" >
                 </div>
             {/each}
         </div>
