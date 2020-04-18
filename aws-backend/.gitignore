@@ -4,3 +4,4 @@ package-lock.json
 /dist/
 /src/rds_credentials.ts
 /.serverless/
+/node_modules/

@@ -23,3 +23,24 @@ functions:
           path: posts
           method: post
           cors: true
+  grapevine_post_get:
+    handler: src/post_get.handler
+    events:
+      - http:
+          path: post
+          method: get
+          cors: true
+  grapevine_vote_get:
+    handler: src/vote_get.handler
+    events:
+      - http:
+          path: vote
+          method: get
+          cors: true
+  grapevine_vote_post:
+    handler: src/vote_post.handler
+    events:
+      - http:
+          path: vote
+          method: post
+          cors: true

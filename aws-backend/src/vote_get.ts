@@ -18,6 +18,7 @@ export const handler = (event: any, context: any, callback: any) => {
     }
 
     let post_id = event.queryStringParameters.id;
+    let sourceIp = event.requestContext.http.sourceIp;
 
     const db_connection = mysql.createConnection({
         host: rds_endpoint,
@@ -29,18 +30,18 @@ export const handler = (event: any, context: any, callback: any) => {
         if (err) throw err;
         console.log('Connected!');
 
-        db_connection.query('SELECT `id`, `date`, `title`, `content`, `upvotes` FROM posts WHERE id = ? LIMIT 1',
-            [post_id],
+        db_connection.query('SELECT `vote` FROM votes WHERE `ip` = ? AND `post_id` = ? LIMIT 1',
+            [sourceIp, post_id],
             (err: any, res: any) => {
                 callback(null, {
                     statusCode: err ? '400' : '200',
-                    body: err ? err.message : (res.length > 0 ? JSON.stringify(res[0]) : JSON.stringify({})),
+                    body: err ? err.message : (res.length > 0 ? JSON.stringify(res[0]) : JSON.stringify({ vote: 0 })),
                     headers: {
                         'Content-Type': 'application/json',
                         "Access-Control-Allow-Origin": "*"
                     }
                 })
-        });
+            });
     });
 
 };
