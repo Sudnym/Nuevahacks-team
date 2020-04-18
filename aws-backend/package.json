@@ -10,6 +10,13 @@
   "author": "WalkerKnapp",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^13.13.0"
+    "@types/aws-lambda": "^8.10.50",
+    "@types/node": "^13.13.0",
+    "dynamodb-doc": "^1.0.0"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "uuid": "^7.0.3"
   }
 }
