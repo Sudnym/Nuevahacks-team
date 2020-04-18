@@ -123,6 +123,7 @@
     }
     :global(body){
         background: #141414;
+        overflow-x: hidden;
     }
     .headertext{
         font-family: Calibri, serif;

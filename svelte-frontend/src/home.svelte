@@ -1,15 +1,14 @@
 <script>
     let posts = [
-        {title: "I MADE A THING", text: "This is a post, hello, suck it."},
-        {title: "I MADE A THING", text: "This is a post, hello, suck it."},
-        {title: "I MADE A THING", text: "This is a post, hello, suck it."},
-        {title: "I MADE A THING", text: "This is a post, hello, suck it."}
+        { title: "ERROR", text: "none"}
     ];
+    fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/posts').then(response => { response.json().then(data =>{posts = data}) });
+    /*let posts = [
+        {title: "ERROR", text: "Unable to load posts"},
+    ];*/
+
     let topic = [
-        { topic: "Interesting"}
-    ];
-    let sort = [
-        { sort: "Hot", link: sorthandler('hot')}
+        { topic: "Under Construction"}
     ];
     function getposts() {
 
@@ -17,8 +16,31 @@
     function topichandler() {
 
     }
-    function sorthandler(sort) {
-
+    function sorthandler() {
+        if (this.textContent == "Hot") {
+            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/posts?sort=hot').then(response => {
+                response.json().then(data => {
+                    posts = data
+                })
+            })
+        }
+        if (this.textContent == "Top") {
+            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/posts?sort=top').then(response => {
+                response.json().then(data => {
+                    posts = data
+                })
+            })
+        }
+        if (this.textContent == "New") {
+            fetch('https://3j05rfweih.execute-api.us-east-1.amazonaws.com/posts?sort=new').then(response => {
+                response.json().then(data => {
+                    posts = data
+                })
+            })
+        }
+    }
+    function upvote(name) {
+        this.src = 'filled.png'
     }
 </script>
 <style>
@@ -138,6 +160,7 @@
         justify-self: center;
         align-self: center;
         margin: auto;
+        padding-bottom: 40px;
     }
 
     .box-inside {
@@ -276,6 +299,7 @@
         justify-content: center;
         justify-items: center;
         align-content: center;
+        padding-bottom: 20px;
     }
     #top-text
     {
@@ -300,6 +324,12 @@
         border-radius: 50px;
         background: black;
     }
+    #upvote{
+        height: 40px;
+        width: 40px;
+        float: left;
+        position: static;
+    }
 </style>
 <body>
 <div class="post">
@@ -314,18 +344,19 @@
             <div class="dropdown">
                 <button class="dropbtn">Sort by:</button>
                 <div class="dropdown-content">
-                    {#each sort as { sort, link }}
-                        <a on:click={link}>{sort}</a>
-                    {/each}
+                    <a on:click={sorthandler}>Hot</a>
+                    <a on:click={sorthandler}>Top</a>
+                    <a on:click={sorthandler}>New</a>
                 </div>
             </div>
             <h3 id = "top-text"> Feed </h3>
-            {#each posts as {title, text}}
-            <div class="box-white">
-                <h1 id="top-text" >{title}</h1>
-                <div id="blackline"></div>
-                <p style="margin-bottom: auto; padding-bottom: 20px">{text}</p>
-            </div>
+            {#each posts as {title, text}, i}
+                <div class="box-white">
+                    <h1 id="top-text" >{title}</h1>
+                    <div id="blackline"></div>
+                    <p style="margin-bottom: auto; padding-bottom: 20px">{text}</p>
+                    <img id='upvote' src="emptybutton.png" on:click={upvote}>
+                </div>
             {/each}
         </div>
     </div>
