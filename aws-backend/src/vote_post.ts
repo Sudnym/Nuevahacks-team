@@ -6,7 +6,7 @@ export const handler = (event: any, context: any, callback: any) => {
     console.log(event);
     console.log(context);
 
-    if (event.queryStringParameters == null || event.queryStringParameters.id == null || event.queryStringParameters.vote == null) {
+    if (event.queryStringParameters == null || event.queryStringParameters.id == null) {
         callback(null, {
             statusCode: '400',
             body: 'No post ID specified',
@@ -17,8 +17,19 @@ export const handler = (event: any, context: any, callback: any) => {
         });
     }
 
+    if(event.body == null || JSON.parse(event.body).vote == null) {
+        callback(null, {
+            statusCode: '400',
+            body: 'No vote specified',
+            headers: {
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*"
+            }
+        });
+    }
+
     let post_id = event.queryStringParameters.id;
-    let vote = event.queryStringParameters.vote;
+    let vote = JSON.parse(event.body).vote;
     let sourceIp = event.requestContext.http.sourceIp;
 
     const db_connection = mysql.createConnection({
@@ -34,11 +45,12 @@ export const handler = (event: any, context: any, callback: any) => {
 
         // TODO: Check that post exists before updating
 
-        db_connection.query('INSERT INTO votes (`ip`, `post_id`, `vote`) VALUES (?, ?, ?)',
-            [sourceIp, post_id, vote],
+        db_connection.query('INSERT INTO votes (`ip`, `post_id`, `vote`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE vote = ?',
+            [sourceIp, post_id, vote, vote],
             (err: any, res: any) => {
                 callback(null, {
                     statusCode: err ? '400' : '200',
+                    body: err ? err.message : undefined,
                     headers: {
                         'Content-Type': 'application/json',
                         "Access-Control-Allow-Origin": "*"
