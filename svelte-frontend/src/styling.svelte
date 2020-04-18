@@ -3,32 +3,14 @@
 </svelte:head>
 <script>
     import Post from "./post.svelte"
-    import Search from "./search.svelte"
-    import Contact from "./contact.svelte"
     import Home from "./home.svelte"
-    let src = "./test.png"
+    let src = "./test.png";
     function homeHandler(){
         document.getElementById("post").style.display = "none";
-        document.getElementById("search").style.display = "none";
-        document.getElementById("contact").style.display = "none";
         document.getElementById("home").style.display = "block";
     }
     function postHandler(){
         document.getElementById("post").style.display = "block";
-        document.getElementById("search").style.display = "none";
-        document.getElementById("contact").style.display = "none";
-        document.getElementById("home").style.display = "none";
-    }
-    function searchHandler() {
-        document.getElementById("post").style.display = "none";
-        document.getElementById("search").style.display = "block";
-        document.getElementById("contact").style.display = "none";
-        document.getElementById("home").style.display = "none";
-    }
-    function contactHandler() {
-        document.getElementById("post").style.display = "none";
-        document.getElementById("search").style.display = "none";
-        document.getElementById("contact").style.display = "block";
         document.getElementById("home").style.display = "none";
     }
 </script>
@@ -72,12 +54,13 @@
         text-shadow: 0 3px 0 #fff1a4;
         margin-left: 4rem;
         font-size: 30px;
+        float: right;
+        justify-self: right;
 
     }
 
     #top-nav-link:hover {color: #fff1a4;
         text-shadow: 0 3px 0 #ccb63a;
-
     }
     .box1 {
         width: 100%;
@@ -157,10 +140,9 @@
         <div id = "heading-logo" >
             <h1 class = "heading-header-text"> Grapevine </h1>
             <img id = "logo" src = https://cdn.discordapp.com/attachments/698564721334419507/699769787294810162/LogoMakr_5Lb4Lv.png alt="Logo">
-            <div style="margin: 50px; width: 50%; float: right ">
-                <a id = "top-nav-link" style = "color: lightgrey;" on:click={homeHandler}> <b> Home</b> </a>
+            <div style="margin: 40px; width: 50%; float: right ">
                 <a id = "top-nav-link" on:click={postHandler}> <b> Post </b> </a>
-                <a id = "top-nav-link" on:click={contactHandler}> <b> Contact </b> </a>
+                <a id = "top-nav-link" style = "color: lightgrey;" on:click={homeHandler}> <b> Home</b> </a>
             </div>
         </div>
         <nav id="top-nav">
@@ -170,12 +152,6 @@
     </div>
     <div id="post" style="display: none">
         <Post/>
-    </div>
-    <div id="search" style="display: none">
-        <Search/>
-    </div>
-    <div id="contact" style="display: none">
-        <Contact/>
     </div>
     <div id="home" style="display: block">
         <Home/>

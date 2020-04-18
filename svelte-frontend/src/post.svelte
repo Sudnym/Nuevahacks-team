@@ -1,6 +1,12 @@
 <!-- This is the page where users upload their own posts and those posts are then sent to the server for handling -->
 
 <script context="module">
+    let topic = [
+        { topic: "interesting"}
+    ];
+    function topichandler() {
+
+    }
 </script>
 <style>
     .post
@@ -12,7 +18,7 @@
         background-color: rgb(58, 56, 66);
         width: 33%;
         float: right;
-        height: 1000px;
+        height: fit-content;
         margin-top: 15px;
     }
     #left-top-div
@@ -75,7 +81,12 @@
         font-size: 36px;
         text-shadow: 0, 5px, 0, rgb(22, 22, 20);
     }
-
+    #topic-text{
+        font-size: 20px;
+        color: white;
+        justify-self: center;
+        text-align: center;
+    }
     textarea:focus, input:focus{
         outline: none;
     }
@@ -84,11 +95,13 @@
     <div>
         <div id = "right-div">
             <h3 id = "top-text"> Topics </h3>
+            {#each topic as { topic }}
+                <p on:click={topichandler} id="topic-text" style="text-align: center; padding: 20px">{topic}</p>
+            {/each}
         </div>
         <div id = "left-top-div">
             <h3 id = "top-text"> Post </h3>
             <div id = "post-section">
-                
                 <img id = "ppf" src = "https://cdn.clipart.email/8f4e4a0f0cbf0dee5af55ba7cfedeca3_white-circle-png-free-download_1890-1890.png" width = 75px height = 75px>
                 <div id = "post-input-box">
                     <input id = "post-input" type = "text">
