@@ -32,7 +32,9 @@ export const handler = (event: any, context: any, callback: any) => {
         if (err) throw err;
         console.log('Connected!');
 
-        db_connection.query('INSERT INTO posts (`ip`, `post_id`, `vote`) VALUES (?, ?, ?)',
+        // TODO: Check that post exists before updating
+
+        db_connection.query('INSERT INTO votes (`ip`, `post_id`, `vote`) VALUES (?, ?, ?)',
             [sourceIp, post_id, vote],
             (err: any, res: any) => {
                 callback(null, {
@@ -43,5 +45,8 @@ export const handler = (event: any, context: any, callback: any) => {
                     }
                 });
         });
+
+        db_connection.query('UPDATE posts SET upvotes = (SELECT COUNT(*) FROM votes WHERE `post_id` = ?) WHERE `post_id` = ?',
+            [post_id, post_id], (err:any, res:any) => {});
     });
 };

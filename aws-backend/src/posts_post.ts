@@ -28,7 +28,7 @@ export const handler = (event: any, context: any, callback: any) => {
     let date = Date.now();
     let title = postBody.title;
     let content = postBody.content;
-    let upvotes = 10;
+    let upvotes = 0;
     let downvotes = 0;
 
     db_connection.query('INSERT INTO posts (`id`, `date`, `ip`, `title`, `content`, `upvotes`, `downvotes`) VALUES (?, ?, ?, ?, ?, ?, ?)',
