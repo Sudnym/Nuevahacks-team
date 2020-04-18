@@ -40,7 +40,9 @@ export const handler = (event: any, context: any, callback: any) => {
                         'Content-Type': 'application/json',
                         "Access-Control-Allow-Origin": "*"
                     }
-                })
+                });
+
+                db_connection.end();
             });
     });
 
